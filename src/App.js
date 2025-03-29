@@ -6,30 +6,31 @@ function App() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
-    console.log('User query:', query); // Optional: log the query
     setSubmitted(true);
   };
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Hello from my React App!</h1>
+    <div className="app-container">
+      <header>
+        <h1>AI Query Summarizer</h1>
+        <p>Enter your query and get a clean summary instantly.</p>
+      </header>
 
-      <input
-        type="text"
-        placeholder="Enter your query"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        style={{ marginRight: '1rem', padding: '0.5rem', width: '300px' }}
-      />
-      <button onClick={handleSubmit} style={{ padding: '0.5rem 1rem' }}>
-        Submit
-      </button>
+      <div className="card">
+        <input
+          type="text"
+          placeholder="Type your query here..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button onClick={handleSubmit}>Submit</button>
 
-      {submitted && (
-        <div style={{ marginTop: '1rem', fontWeight: 'bold' }}>
-          Summarized data 4U
-        </div>
-      )}
+        {submitted && (
+          <div className="response">
+            Summarized data 4U
+          </div>
+        )}
+      </div>
     </div>
   );
 }
