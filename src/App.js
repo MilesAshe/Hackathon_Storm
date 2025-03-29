@@ -10,7 +10,7 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div className="SummAIze">
       <header>
         <h1>AI Query Summarizer</h1>
         <p>Enter your query and get a clean summary instantly.</p>
